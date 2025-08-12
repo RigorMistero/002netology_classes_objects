@@ -72,7 +72,7 @@ int main(int argc, char** argv)
 
     } while(user_command != 'x');
 
-     if (answer == "No")
+   /*  if (answer == "No")
     {
         Counter c;
 
@@ -95,10 +95,10 @@ int main(int argc, char** argv)
             default: break;
         }
 
-    }while(user_command != 'x');
+    }while(user_command != 'x');*/
 
 
-    }
+
 
     return EXIT_SUCCESS;
 }
