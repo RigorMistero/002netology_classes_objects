@@ -1,5 +1,5 @@
 #include <iostream>
-#include <cstring>
+
 
 class Counter
 {
@@ -9,12 +9,14 @@ private:
 public:
    Counter()
     {
-        this->counter = 1;
+
+        counter = 1;
     }
 
     Counter(int a)
     {
-        this->counter = a;
+
+        counter = a;
     }
 
     int get_counter() {return counter;}
@@ -22,11 +24,13 @@ public:
 
     void increment()
     {
-        this->counter += 1;
+
+        counter += 1;
     }
    void decrement()
     {
-        this->counter -= 1;
+
+        counter -= 1;
     }
 
 
@@ -35,7 +39,7 @@ public:
 int main(int argc, char** argv)
 {
     std::string answer{};
-    std::cout << "Need initializing? Yes/No: ";
+    std::cout << "Need initializing? yes/no: ";
     std::cin >> answer;
 
     Counter c;

@@ -39,19 +39,17 @@ public:
     }
 
     bool set_num1(double num1)
-    {
-        if (num1 == 0) {std::cout << "ERROR input!" << std::endl;return false;}
-        this->num1 = num1;
-        return true;
-    }
-
-    bool set_num2(double num2)
-    {
-        if (num2 == 0) {std::cout << "ERROR input!" << std::endl;return false;}
-        this->num2 = num2;
-        return true;
-    }
-
+	{
+		if (num1 == 0) return false;
+		this->num1 = num1;
+		return true;
+	}
+	bool set_num2(double num2)
+	{
+		if (num2 == 0) return false;
+		this->num2 = num2;
+		return true;
+	}
        // double get_num1() { return num1; } // геттер
        // void set_num1 (int value) { if (value != 0) num1 = value; } //сеттер
 
@@ -69,37 +67,31 @@ int main(int argc, char** argv)
 
     double a{};
     double b{};
-
+    double res{};
 
 
 do {
-    std::cout << "Enter num1: ";
-    std::cin >> a;
+  do
+		{
+			std::cout << "Enter num1: ";
+			std::cin >> a;
+			res = calc.set_num1(a);
+			if (!res)
+			{
+				std::cout << "ERROR INPUT!\n";
+			}
+		} while (!res);
+		do
+		{
+			std::cout << "Enter num2: ";
+			std::cin >> b;
+			res = calc.set_num2(b);
+			if (!res)
+			{
+				std::cout << "ERROR INPUT!\n";
+			}
+		} while (!res);
 
-    std::cout << "Enter num2: ";
-    std::cin >> b;
-
-  //  std::cout << calc.set_num1(a);
-   // std::cout << calc.set_num2(b);
-
- //   if (a == 0)
-   //     do{
-     //       std::cout << "ERROR input!" << std::endl;
-       //     std::cout << "Enter num1: ";
-         //   std::cin >> a;
-           // }while(a == 0);
-
-  //  if (b == 0)
-    //    do{
-      //      std::cout << "ERROR input!" << std::endl;
-        //    std::cout << "Enter num2: ";
-          //  std::cin >> b;
-        //}while(b == 0);
-
-    //Calculator calc{a,b};
-
-    calc.set_num1(a);
-    calc.set_num2(b);
 
     std::cout << "num1 + num2 = " << calc.add() << std::endl;
     std::cout << "num1 - num2 = " << calc.subtract_1_2() << std::endl;
